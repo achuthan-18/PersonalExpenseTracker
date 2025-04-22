@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const {protect} = require('../middleware/authMiddleware');
 const {
     addIncome,
@@ -14,4 +14,4 @@ router.get('/getincome' , protect , getAllIncome);
 router.delete('/deleteincome' , protect , deleteIncome);
 router.get('/:id' , protect , downloadIncomeExcel);
 
-module.exports = router;
+module.exports = router;*/
