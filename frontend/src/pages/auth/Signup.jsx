@@ -87,7 +87,7 @@ const Signup = () => {
                                 key={index}
                                 src={url}
                                 alt="Option"
-                                style={{ width: "100px", margin: "10px", cursor: "pointer", border: selectedImage === url ? "3px solid blue" : "2px solid gray" }}
+                                style={{ width: "150px", height:"150px" , margin: "10px", cursor: "pointer", border: selectedImage === url ? "3px solid blue" : "2px solid gray" }}
                                 onClick={() => handleImageClick(url)}
                                 className="images-register"
                                 />
