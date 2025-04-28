@@ -9,9 +9,9 @@ const {
 
 const router = express.Router();
 
-router.post('/addincome' , protect , addIncome);
-router.get('/getincome' , protect , getAllIncome);
+router.post('/add' , protect , addIncome);
+router.get('/get' , protect , getAllIncome);
 router.delete('/:id' , protect , deleteIncome);
-router.get('/downloadincome' , protect , downloadIncomeExcel);
+router.get('/downloadexcel' , protect , downloadIncomeExcel);
 
 module.exports = router;

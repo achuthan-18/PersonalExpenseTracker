@@ -13,15 +13,11 @@ const Signup = () => {
 
     const navigate = useNavigate();
 
+    const register = async (name , email , password) => {
+        await axios.post('http://localhost:8000/api/v1/auth/register' ,{name , email , password});
+    }
     const handleRegister = async (e) => {
         e.preventDefault();
-        // try {
-        //     await register(username, password);
-        //     alert("Registered successfully!");
-        //     navigate("/login");
-        // } catch (error) {
-        //     alert("Registration failed!");
-        // }
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if(!name){
@@ -44,7 +40,15 @@ const Signup = () => {
             return;
         }
         setError("");
-        alert("success");
+
+        try {
+            await register(name, email, password);
+            alert("Registered successfully!");
+            navigate("/login");
+        } catch(error) {
+            alert("Registration failed!");
+        }
+
     };
 
     return (

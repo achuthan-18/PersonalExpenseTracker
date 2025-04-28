@@ -1,0 +1,123 @@
+/* .navbar-container {
+    width: 30%;
+    min-width: 250px; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    position: fixed;
+    background: linear-gradient(135deg, #68c0c7, #6dd5ed);
+} */
+
+.navbar-container {
+    width: 350px;
+    min-width: 250px;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(135deg, #68c0c7, #6dd5ed);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.navbar-container{
+    background: linear-gradient(135deg, #68c0c7, #6dd5ed);
+}
+.navbar-name{
+    color: white;
+    text-align: center;
+    margin: 20px 20px 0px 20px;
+    letter-spacing: 2px;
+}
+
+.navbar-email{
+    color: white;
+    text-align: center;
+    margin: 0px 20px 50px 20px;
+    letter-spacing: 2px;
+}
+.navbar-nav {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navbar-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar .navbar-ul .navbar-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+/*   
+  .navbar ul li:hover {
+    background: #e0f7fa;
+    border-radius: 8px;
+  } */
+/* 
+.navbar-list {
+    color: #333;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
+.navbar-list {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-list:hover {
+    background-color: #aefaff;
+    color: #1b4346; 
+} 
+/* 
+.navbar-list:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+} */
+
+
+@media (max-width: 768px) {
+    .navbar-container {
+        width: 100%;
+        height: auto;
+        position: relative; 
+        box-shadow: none;
+    }
+    .navbar-ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .navbar-list {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+}

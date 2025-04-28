@@ -1,5 +1,6 @@
 const Income = require('../models/Income');
 const Expense = require('../models/Expense');
+const User = require('../models/User');
 const { isValidObjectId, Types } = require("mongoose");
 
 exports.getDashboardData = async (req, res) => {
@@ -7,19 +8,16 @@ exports.getDashboardData = async (req, res) => {
         const userId = req.user.id;
         const userObjectId = new Types.ObjectId(String(userId));
 
-        // Total Income
         const totalIncome = await Income.aggregate([
             { $match: { userId: userObjectId } },
-            { $group: { _id: null, total: { $sum: "$amount" } } }, // fixed typo
+            { $group: { _id: null, total: { $sum: "$amount" } } }, 
         ]);
 
-        // Total Expense
         const totalExpense = await Expense.aggregate([
             { $match: { userId: userObjectId } },
-            { $group: { _id: null, total: { $sum: "$amount" } } }, // fixed typo
+            { $group: { _id: null, total: { $sum: "$amount" } } }, 
         ]);
 
-        // Last 60 Days Income
         const last60DaysIncomeTransaction = await Income.find({
             userId,
             date: { $gte: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000) },
@@ -30,7 +28,6 @@ exports.getDashboardData = async (req, res) => {
             0
         );
 
-        // Last 30 Days Expense
         const last30DaysExpenseTransactions = await Expense.find({
             userId,
             date: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
@@ -41,22 +38,21 @@ exports.getDashboardData = async (req, res) => {
             0
         );
 
-        // Recent Transactions
         const incomeTxns = await Income.find({ userId }).sort({ date: -1 }).limit(5);
         const expenseTxns = await Expense.find({ userId }).sort({ date: -1 }).limit(5);
-
+        const getUser =  await User.findById(userId);
         const lastTransaction = [...incomeTxns.map(txn => ({
             ...txn.toObject(),
             type: "income",
         })), ...expenseTxns.map(txn => ({
             ...txn.toObject(),
             type: "expense",
-        }))].sort((a, b) => b.date - a.date); // sorting latest first
+        }))].sort((a, b) => b.date - a.date); 
 
-        // Compute totalBalance safely
         const totalBalance = (totalIncome[0]?.total || 0) - (totalExpense[0]?.total || 0);
 
         res.json({
+            getUser,
             totalBalance,
             totalIncome: totalIncome[0]?.total || 0,
             totalExpenses: totalExpense[0]?.total || 0,

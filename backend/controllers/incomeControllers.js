@@ -1,4 +1,5 @@
 const Income = require('../models/Income');
+const User = require('../models/User');
 const XLSX = require('xlsx');
 exports.addIncome = async(req , res) => {
     const userId = req.user.id;
@@ -30,7 +31,8 @@ exports.getAllIncome = async(req , res) => {
 
     try{
         const income = await Income.find({userId}).sort({date : -1});
-        res.json(income);
+        const userInfo = await User.findById(userId);
+        res.json({income , userInfo});
     }
     catch(err){
         res.status(500).json({message:"Server Error"});

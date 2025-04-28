@@ -1,0 +1,247 @@
+#expense-page {
+  display: flex;
+}
+
+.expense-page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.expense-page-container {
+  margin-left: 30%; 
+  padding: 2rem;
+  width: 70%;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+#navbar-expense{
+position: fixed;
+}
+  
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+
+#expense-name h1{
+font-size: 45px;
+margin: 20px 20px 0px 20px;
+letter-spacing: 2px;
+}
+
+#expense-name h1 #expense-in{
+  color: #34c759;
+  font-weight: bolder;
+}
+
+#expense-name h1 #expense-ex{
+  color: #ff4d4f;
+  font-weight: bolder;
+}
+
+#expense-name h2{
+  font-size: 20px;
+  margin: 0px 20px 50px 20px;
+  letter-spacing: 2px;
+}
+  .expense-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  
+  .expense-header-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .download-btn,
+  .add-btn {
+    background-color: #219fa8;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .download-btn:hover,
+  .add-btn:hover {
+    background-color: #1b8c92;
+  }
+  
+  .expense-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+  }
+  
+  .expense-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .emoji-button {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .emoji-picker {
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn {
+    background-color: #219fa8;
+    color: #fff;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1b8c92;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #aaa;
+  }
+  
+  .expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .expense-item:hover {
+    background: #e0f7f7;
+  }
+  
+  .expense-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .expense-icon {
+    font-size: 30px;
+  }
+  
+  .expense-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .expense-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .expense-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .expense-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4d4f;
+  }
+  
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #ff4d4f;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .no-expense {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .expense-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .expense-header-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
