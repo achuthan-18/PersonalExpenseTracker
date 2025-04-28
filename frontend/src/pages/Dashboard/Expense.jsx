@@ -6,6 +6,8 @@ import EmojiPicker from "emoji-picker-react";
 import '../../components/css/expense.css';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import Navbar from "../../components/navbar/Navbar";
+import { ClipLoader } from "react-spinners"; 
+
 
 const Expense = () => {
   const [expenseData, setExpenseData] = useState(null);
@@ -17,6 +19,8 @@ const Expense = () => {
   const [date, setDate] = useState('');
 
   const navigate = useNavigate();
+
+
 
   const fetchExpense = async () => {
     const token = localStorage.getItem("token");
@@ -122,6 +126,11 @@ const Expense = () => {
     date: new Date(item.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }),
     amount: Number(item.amount)
 }))||[];
+
+
+if (!expenseData) {
+  return <div className="loader-container"><ClipLoader color={"#36D7B7"} size={50} /></div>;
+}
 
   return (
     <div id="expense-page">

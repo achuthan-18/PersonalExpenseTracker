@@ -5,6 +5,7 @@ import EmojiPicker from "emoji-picker-react";
 import "../../components/css/income.css";
 import Navbar from "../../components/navbar/Navbar";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+import { ClipLoader } from "react-spinners"; 
 
 const Income = () => {
   const [incomeData, setIncomeData] = useState(null);
@@ -129,6 +130,11 @@ const Income = () => {
       }),
       amount: item.amount,
     })) || [];
+
+    if (!incomeData) {
+        return <div className="loader-container"><ClipLoader color={"#36D7B7"} size={50} /></div>;
+      }
+    
 
   return (
     
