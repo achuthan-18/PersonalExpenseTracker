@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../components/css/dashboard.css"; 
 import Navbar from "../../components/navbar/Navbar";
+import { ClipLoader } from "react-spinners"; 
+
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
   const [userInfo , setUserInfo] = useState(null);
@@ -35,7 +37,7 @@ const Dashboard = () => {
   }, [navigate]);
 
   if (!dashboardData) {
-    return <div>Loading...</div>;
+    return <div className="loader-container"><ClipLoader color={"#36D7B7"} size={50} /></div>;
   }
 
   const { totalBalance, totalIncome, totalExpenses, recentTransaction } = dashboardData;
@@ -50,12 +52,14 @@ const Dashboard = () => {
     <div id="home-container">
       <div id="navbar-home">
           <div id="home-name">
-            <h1>
+            <h1 id="home-title">
               <span id="home-in">In</span>
               <span id="home-ex">Ex</span>Tracker
-              </h1>
-            <h1>
-              <span id="welcome">Welcome,</span> <br></br>
+            </h1>
+            <h1 id="home-info">
+              <div>
+                <img src={userInfo?.selectedImage} alt="User" id="userimage"/>
+              </div>
               <b>{userInfo?.name.toUpperCase()}</b>
             </h1>
             <h2>{userInfo?.email}</h2>

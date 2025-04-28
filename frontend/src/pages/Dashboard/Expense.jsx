@@ -127,11 +127,14 @@ const Expense = () => {
     <div id="expense-page">
        <div id="navbar-expense">
           <div id="expense-name">
-            <h1>
+            <h1 id="expense-title">
               <span id="expense-in">In</span>
               <span id="expense-ex">Ex</span>Tracker
-              </h1>
-            <h1>
+            </h1>
+            <h1 id="expense-info">
+              <div>
+                <img src={expenseData?.userInfo?.selectedImage} alt="User" id="userimage"/>
+              </div>
               <b>{expenseData?.userInfo?.name.toUpperCase()}</b>
             </h1>
             <h2>{expenseData?.userInfo?.email}</h2>

@@ -29,11 +29,20 @@
   }
 
   
- #income-name h1{
-  font-size: 45px;
-  margin: 20px 20px 0px 20px;
-  letter-spacing: 2px;
-}
+  #income-name #income-title{
+    font-size: 45px;
+    margin: 20px 20px 0px 20px;
+    letter-spacing: 2px;
+  }
+
+  #income-name #income-info{
+    font-size: 26px;
+    margin: 20px 20px 0px 20px;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   #income-name h1 #income-in{
     color: #34c759;
@@ -45,15 +54,27 @@
     font-weight: bolder;
   }
 
+
+  #income-name h1 div #userimage{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+  }
+
   #income-name h2{
-    font-size: 20px;
-    margin: 0px 20px 50px 20px;
+    font-size: 15px;
+    margin: 0px 20px 20px 20px;
     letter-spacing: 2px;
+    text-align: center;
   }
   .income-header-buttons {
     display: flex;
     gap: 15px;
   }
+
   
   .download-btn,
   .add-btn {
@@ -215,6 +236,7 @@
     font-size: 22px;
     color: #ff4d4f;
     cursor: pointer;
+    font-weight: 600;
   }
   
   .delete-btn:hover {
@@ -233,10 +255,15 @@
     #income-page {
         flex-direction: column;
     }
+
     .income-page-container {
         margin-left: 0;
         width: 100%;
         padding: 1rem;
+    }
+
+    #navbar-income{
+      position: static;
     }
 
     .income-header {

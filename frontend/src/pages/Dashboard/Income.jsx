@@ -17,6 +17,8 @@ const Income = () => {
 
   const navigate = useNavigate();
 
+  
+
   const fetchIncome = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -129,14 +131,18 @@ const Income = () => {
     })) || [];
 
   return (
+    
     <div id="income-page">
      <div id="navbar-income">
           <div id="income-name">
-            <h1>
+            <h1 id="income-title">
               <span id="income-in">In</span>
               <span id="income-ex">Ex</span>Tracker
-              </h1>
-            <h1>
+            </h1>
+            <h1 id="income-info">
+              <div>
+                <img src={incomeData?.userInfo?.selectedImage} alt="User" id="userimage"/>
+              </div>
               <b>{incomeData?.userInfo?.name.toUpperCase()}</b>
             </h1>
             <h2>{incomeData?.userInfo?.email}</h2>

@@ -4,9 +4,9 @@ const generateToken = (id) => {return jwt.sign({id} , process.env.JWT_SECRET , {
 
 exports.registerUser = async (req , res) => {
     console.log("Requesting body:", req.body); 
-    const {name , email , password} = req.body;
+    const {name , email , password , selectedImage } = req.body;
 
-    if(!name || !email || !password){
+    if(!name || !email || !password || !selectedImage ){
         return res.status(400).json({message:"Please enter all field"});        
     }
 
@@ -20,6 +20,7 @@ exports.registerUser = async (req , res) => {
             name , 
             email , 
             password,
+            selectedImage ,
         });
 
         res.status(201).json({

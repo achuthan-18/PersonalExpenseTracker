@@ -80,7 +80,7 @@ exports.downloadExpenseExcel = async (req, res) => {
         const data = expense.map((item) => ({
             Category: item.category,
             Amount: item.amount,
-            Date: item.date,
+            Date: new Date(item.date).toLocaleDateString("en-GB"),
         }));
 
         const wb = xlsx.utils.book_new();

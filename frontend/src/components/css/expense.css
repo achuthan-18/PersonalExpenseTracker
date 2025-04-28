@@ -28,11 +28,19 @@ position: fixed;
   flex-wrap: wrap;
 }
 
+#expense-name #expense-title{
+  font-size: 45px;
+  margin: 20px 20px 0px 20px;
+  letter-spacing: 2px;
+}
 
-#expense-name h1{
-font-size: 45px;
-margin: 20px 20px 0px 20px;
-letter-spacing: 2px;
+#expense-name #expense-info{
+  font-size: 26px;
+  margin: 20px 20px 0px 20px;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #expense-name h1 #expense-in{
@@ -45,15 +53,21 @@ letter-spacing: 2px;
   font-weight: bolder;
 }
 
-#expense-name h2{
-  font-size: 20px;
-  margin: 0px 20px 50px 20px;
-  letter-spacing: 2px;
+#expense-name h1 div #userimage{
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
 }
-  .expense-header h2 {
-    font-size: 28px;
-    font-weight: 600;
-  }
+
+#expense-name h2{
+  font-size: 15px;
+  margin: 0px 20px 20px 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
   
   .expense-header-buttons {
     display: flex;
@@ -235,13 +249,27 @@ letter-spacing: 2px;
   
   /* Responsive */
   @media (max-width: 768px) {
-    .expense-header {
+    #expense-page {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-    }
-    .expense-header-buttons {
+  }
+
+  .expense-page-container {
+      margin-left: 0;
       width: 100%;
-      justify-content: space-between;
-    }
+      padding: 1rem;
+  }
+
+  #navbar-expense{
+    position: static;
+  }
+
+  .expense-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .expense-header-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
   }
