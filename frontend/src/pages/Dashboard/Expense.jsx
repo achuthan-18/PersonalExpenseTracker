@@ -26,7 +26,7 @@ const Expense = () => {
       return;
     }
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/expense/get", {
+      const res = await axios.get("https://personalexpensetracker-ssbg.onrender.com/api/v1/expense/get", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(res.data);
@@ -60,7 +60,7 @@ const Expense = () => {
     e.preventDefault();
     const token = localStorage.getItem("token"); 
     try {
-      await axios.post('http://localhost:8000/api/v1/expense/add', {
+      await axios.post('https://personalexpensetracker-ssbg.onrender.com/api/v1/expense/add', {
         icon,
         category,
         amount,
@@ -84,7 +84,7 @@ const Expense = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token"); 
     try{
-      await axios.delete(`http://localhost:8000/api/v1/expense/${id}`,
+      await axios.delete(`https://personalexpensetracker-ssbg.onrender.com/api/v1/expense/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -99,7 +99,7 @@ const Expense = () => {
   const handleDownloadExcel = async () => {
     const token = localStorage.getItem("token");
     try{
-      const response =  await axios.get('http://localhost:8000/api/v1/expense/downloadexcel',
+      const response =  await axios.get('https://personalexpensetracker-ssbg.onrender.com/api/v1/expense/downloadexcel',
         {
           responseType: 'blob' ,
           headers: { Authorization: `Bearer ${token}` },

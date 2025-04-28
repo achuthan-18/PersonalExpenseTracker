@@ -28,7 +28,7 @@ const Signup = () => {
 
 
     const register = async (name , email , password , selectedImage) => {
-        await axios.post('http://localhost:8000/api/v1/auth/register' ,{name , email , password , selectedImage});
+        await axios.post('https://personalexpensetracker-ssbg.onrender.com/api/v1/auth/register' ,{name , email , password , selectedImage});
     }
     const handleRegister = async (e) => {
         e.preventDefault();

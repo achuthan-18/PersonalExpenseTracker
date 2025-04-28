@@ -27,7 +27,7 @@ const Income = () => {
       return;
     }
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/income/get", {
+      const res = await axios.get("https://personalexpensetracker-ssbg.onrender.com/api/v1/income/get", {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(res.data);
@@ -62,7 +62,7 @@ const Income = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:8000/api/v1/income/add",
+        "https://personalexpensetracker-ssbg.onrender.com/api/v1/income/add",
         {
           icon,
           source,
@@ -89,7 +89,7 @@ const Income = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:8000/api/v1/income/${id}`, {
+      await axios.delete(`https://personalexpensetracker-ssbg.onrender.com/api/v1/income/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchIncome();
@@ -102,7 +102,7 @@ const Income = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/income/downloadexcel",
+        "https://personalexpensetracker-ssbg.onrender.com/api/v1/income/downloadexcel",
         {
           responseType: "blob",
           headers: { Authorization: `Bearer ${token}` },

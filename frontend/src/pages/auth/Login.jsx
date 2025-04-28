@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     
     const login = async (email, password) => {    
-        const response = await axios.post('http://localhost:8000/api/v1/auth/login', { email, password });
+        const response = await axios.post('https://personalexpensetracker-ssbg.onrender.com/api/v1/auth/login', { email, password });
         if (!response.data.token) {
             throw new Error("Invalid credentials");
         }

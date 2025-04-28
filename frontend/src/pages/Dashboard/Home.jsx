@@ -20,7 +20,7 @@ const Dashboard = () => {
         return;
       }
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/dashboard", {
+        const response = await axios.get("https://personalexpensetracker-ssbg.onrender.com/api/v1/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log(response.data);
