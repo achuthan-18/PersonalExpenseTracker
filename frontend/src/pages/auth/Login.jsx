@@ -48,12 +48,13 @@ const Login = () => {
             const data = await login(email, password);
             console.log("Login successful, data received:", data); 
             if (data.token) {
-                alert(`Welcome ${(data?.user?.name.toUpperCase()) || 'User'}`);
+               // alert(`Welcome ${(data?.user?.name.toUpperCase()) || 'User'}`);
                 navigate("/dashboard");
             }
         } catch (error) {
             console.error("Login failed:", error);
-            alert("Login failed. Please check your credentials.");
+           // alert("Login failed. Please check your credentials.");
+             setError("Incorrect username or password.");
         }
     };
     
