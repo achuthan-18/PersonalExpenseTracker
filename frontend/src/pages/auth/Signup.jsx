@@ -63,10 +63,11 @@ const Signup = () => {
 
         try {
             await register(name, email, password , selectedImage);
-            alert("Registered successfully!");
+           // alert("Registered successfully!");
             navigate("/login");
         } catch(error) {
-            alert("Registration failed!");
+            //alert("Registration failed!");
+             setError("User Already Exist");
         }
 
     };
