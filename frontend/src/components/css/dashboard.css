@@ -1,15 +1,4 @@
-/* .dashboard-container {
-    padding: 2rem;
-    background-color: #f9fafb;
-    min-height: 100vh;
-  }
-   */
-  /* .dashboard-container {
-    padding: 2rem;
-    background-color: #f9fafb;
-    min-height: 100vh;
-    margin-left: 30%; 
-} */
+
   body {
     font-family: 'Poppins', sans-serif;
   }
@@ -162,19 +151,6 @@
     font-size: 0.875rem;
     cursor: pointer;
   } 
-  
-  /* .see-all {
-    background: #3b82f6;
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    cursor: pointer;
-  }
-  .see-all:hover {
-    background: #2563eb;
-  } */
   .transactions-list {
     display: flex;
     flex-direction: column;
@@ -220,7 +196,6 @@
     color: #ef4444;
     background-color: white;
   }
-  
   .overview {
     text-align: center;
   }
@@ -249,8 +224,7 @@
     height: 100vh;
   }
   
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     #navbar-home {
       position: relative;
       width: 100%;
@@ -264,11 +238,16 @@
     #home-container {
       flex-direction: column;
     }
-
+  
     .bottom-section {
       display: flex;
       flex-direction: column-reverse;
       gap: 2rem;
     }
-    
+  
+    .chart-container {
+      width: 100%;
+      padding: 1rem 0;
+    }
   }
+  
