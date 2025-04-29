@@ -61,7 +61,11 @@
     cursor: pointer;
     font-family: Arial, sans-serif;
 }
-
+ .errormessage{
+    color: red;
+    display: flex;
+    align-items: center;
+}
 @media only screen and (max-width: 768px) {
     #mainlogin{
         margin-top: 0 ;
