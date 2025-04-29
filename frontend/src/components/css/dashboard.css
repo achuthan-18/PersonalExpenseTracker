@@ -198,6 +198,9 @@
   }
   .overview {
     text-align: center;
+    display: grid;
+    place-content: center;
+
   }
   
   .overview h2 {
